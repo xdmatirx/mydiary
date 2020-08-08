@@ -11,7 +11,7 @@ module.exports = {
         }
       ],
       nav: [
-        {text: 'HOME', link: '/Introduce/1.getting-start.md'},
+        {text: 'HOME', link: '/css/1.css_chapter.md'},
         {text: 'github', link: 'https://xdmatirx.github.io/'}
       ]
     },

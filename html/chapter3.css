@@ -1,0 +1,26 @@
+.box {
+    padding: 10px;
+    background-color: red;
+}
+img {
+    float: left
+}
+.box:after{
+    content: '';
+    clear: both;
+    display: table;
+}
+table{
+    width: 280px;
+    text-align: left;
+    margin: 0 auto;
+
+}
+.father{
+    width: 100px;
+    background-color: green;
+    /*white-space: nowrap;*/
+}
+.son{
+    display: inline-block;
+}

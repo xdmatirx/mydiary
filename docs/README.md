@@ -3,7 +3,7 @@ home: true
 
 
 actionText: 这里开始
-actionLink: /Introduce/1.getting-start.md
+actionLink: /css/css_chapter.md
 features:
 
 - title: 简洁
