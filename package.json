@@ -1,7 +1,9 @@
 {
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "build": "vuepress build docs",
+    "push": "git add . && git commit -m'gh-pages update' && git push -u origin master",
+    "deploy": "deploy.sh"
   },
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.5.0",

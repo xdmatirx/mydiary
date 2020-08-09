@@ -3,7 +3,7 @@ home: true
 
 
 actionText: 这里开始
-actionLink: /css/css_chapter.md
+actionLink: /mycss/css.html
 features:
 
 - title: 简洁
@@ -16,6 +16,5 @@ features:
 
 - title: 插件丰富
   details: 实现多种功能
-
 
 ---
