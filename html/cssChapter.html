@@ -9,8 +9,10 @@
 <div class="box">
     <img src="range.png" width="150px">
 </div>
-
-<table>
+<div class="outlinebox">
+    <div class="inlinebox">z</div>
+</div>
+<!-- <table>
     <tr>
         <td>宽度很小的时候列就1列就1列就1列</td>
         <td>当父级relative，且宽度很小的时候，例如{position:relative; width:20px;}，absolute元素也会出现一柱擎天的情况；</td>
@@ -23,6 +25,38 @@
 
 <div class="book">
     <button></button>
+</div> -->
+<div class="imgsContainer" id="wrap">
+    <ul class="imgs">
+        <li><img src="./range.png" width="140px"></li>
+        <li><img src="./range.png" width="140px"></li>
+        <li><img src="./range.png" width="140px"></li>
+        <li><img src="./range.png" width="140px"></li>
+        <li><img src="./range.png" width="140px"></li>
+        <li><img src="./range.png" width="140px"></li>
+    </ul>
 </div>
+<div>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+</div>
+
+<div style="width:200px; height:200px; padding:10px; background-color: yellowgreen;">
+    <div style="height: 100%;background-color: red;">div2</div>
+</div>
+<div style="width:200px; height:200px; padding:10px; background-color: yellowgreen; position: relative;">
+    <div style="height: 100%; width: 100%; background-color: red; position: absolute;">div2</div>
+</div>
+
+<div class="ele">
+    <img src="./range.png" alt="">
+</div>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/iScroll/5.2.0/iscroll.js"></script>
+<script>
+    new IScroll('#wrap', function() {
+        scrollbars: true;
+        scrollX: true
+    })
+</script>
 </body>
 </html>

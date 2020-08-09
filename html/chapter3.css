@@ -2,9 +2,9 @@
     padding: 10px;
     background-color: red;
 }
-img {
+/* img {
     float: left
-}
+} */
 .box:after{
     content: '';
     clear: both;
@@ -23,4 +23,39 @@ table{
 }
 .son{
     display: inline-block;
+}
+
+.imgsContainer{
+    width: 300px;
+    height: 160px;
+    overflow: hidden;
+    position: relative;
+}
+
+.imgsContainer > ul {
+    position: absolute;
+    white-space: nowrap;
+}
+.imgsContainer li {
+    display: inline-block;
+}
+.inlinebox {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    padding-left: 200px;
+}
+textarea {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+}
+
+.ele{
+    max-width: 100px;
+    overflow: hidden;
+    transition: max-width 0.5s;
+}
+.ele:hover {
+    max-width: 200px;
 }
