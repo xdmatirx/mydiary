@@ -59,3 +59,87 @@ textarea {
 .ele:hover {
     max-width: 200px;
 }
+
+.imgalt{
+    display: inline-block;
+    height: 400px;
+    width: 300px;
+    position: relative;
+    background-color: gray;
+    overflow: hidden;
+}
+
+
+/* .imgalt:not([src]) {
+    visibility: hidden;
+}
+.imgalt::after{
+    content: attr(alt);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(100%);
+    transition: 0.2s;
+    background-color: #fa8af3;
+    visibility: visible;
+}
+.imgalt::after:hover {
+    transform: translateY(0);
+} */
+
+.img:not([src]) {
+    visibility: hidden;
+}
+
+.img{
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+img::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background-color: rgb(188, 210, 218);
+    visibility: visible;
+}
+
+img::after{
+    content: attr(alt);
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.2s;
+    visibility: visible;
+    /* line-height: 30px; */
+}
+
+img:hover::after{
+    transform: translateY(0);
+
+}
+
+.img:hover{
+    content: url('./')
+}
+
+div:empty{
+    content: '随便嘻嘻嘻';
+}
+.bgc:after{
+    content: '';
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-image: url('./range.png');
+}

@@ -67,7 +67,7 @@ box-sizing是用来解决可替换元素宽度自适应的问题的。如 input 
 
 # 接下来是height
 
-height相对简单，有一个点就是，height的100是作用于父元素的，，但如果父元素是auto，或者也100%，那没有意义，还得向上层接着找，知道一个具体的数值。
+height相对简单，有一个点就是，height的100%是作用于父元素的，，但如果父元素是auto，或者也100%，那没有意义，还得向上层接着找，知道一个具体的数值。
 
 如果想要height:100%生效，需要：
 1. 显式使用一个高度值给父元素
@@ -115,4 +115,57 @@ min-height和min-width的初始值是auto不是0.
     max-width: 200px;
 }
 ```
+## content部分
+### 结合辅助元素去生成
 
+假如我有一个h1是标题栏的文字，到了移动端，我希望用图片替代，
+可以使用
+```css
+h1{
+  content: url('./*.svg')
+  // 好处是利于seo，这种替换而来的东西无法被选中下载，且搜索引擎还是按照原来的文字来取到的。用svg是因为更细腻
+}
+```
+
+用content生成的任何东西都无法被选中，所以不要放需要给复制或者搜索引擎seo的内容。建议是无关紧要的东西。content做的其实只是视觉上的替换。
+
+content属性大多和::before/::after相关。
+例如
+- 清除浮动
+  ```css
+    clear:after{
+      content: '';
+      display: table; 
+      <!-- display: block 也可以 -->
+      clear: both;
+    }
+  ```
+
+  ### content辅助图片的生成使用
+很少用content生成图片，一般用下面的方式，因为使用content尺寸难以控制，下面的话可以利用
+```css
+  div:before{
+    content: '';
+    background: url('./img');
+  }
+
+  .bgc:after{
+    content: '';
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-image: url('./range.png');
+}
+```
+### content的attr属性
+content的attr属性挺好用的，
+但里面的使用属性名称时不要带引号
+
+```css
+img{
+  content: url(alt)
+}
+```
+content先到这里
+
+## padding
