@@ -15,7 +15,13 @@ block级  inline级  inline-block内联；
 一整串的数字（3.1415926）这两种都是连着不可中间断开的，
 如果后续的宽度不够，单词和数则整个都会到下一行，不会断开。
 
+## 内联元素：
 
+定义：外在的表现形式为行内元素 inline-block inline-table inline都是。
+
+表现出 的形式：那就是可以和文字 图片 一行显示。浮动元素这种不算。
+
+通常是a， span，button，img，input，selection.
 
 #### 元素**外部**的尺寸与表现形式关系有**<u>两种</u>**：
 
@@ -124,7 +130,6 @@ min-height和min-width的初始值是auto不是0.
 ## content部分
 ### 结合辅助元素去生成
 
-<<<<<<< HEAD
 假如我有一个h1是标题栏的文字，到了移动端，我希望用图片替代，
 可以使用
 ```css
@@ -176,13 +181,90 @@ img{
 content先到这里
 
 ## padding
-=======
-## 内联元素：
 
-定义：外在的表现形式为行内元素 inline-block inline-table inline都是。
+因为默认的width作用在content上，设置了padding后
+整体变宽了，可能和我们的认知不太一样，但也不建议
+直接改  box-sizing: border-box；
+建议还是利用无宽度和宽度分离原则(就是外套标签)吧。
 
-表现出 的形式：那就是可以和文字 图片 一行显示。浮动元素这种不算。
+因为内联元素没有可视高度和可视宽度,会以为设置了padding对
+高度上无影响，但实际是会存在的。
 
-通常是a， span，button，img，input，selection.
+box-shadow和outline是视觉上的层叠，不影响外部尺寸；
+inline元素的padding是会影响外部尺寸的。
+
+比如button增加padding是可以增加点击范围但不影响视觉，移动端可以用上。
+
+同理可以给文字性的链接使用上。
+
+padding看起来不计算高度，但实际时会在盒子周围发送渲染的。
+
+## padding的百分比计算
+
+- padding不支持负的
+- padding的百分比值计算（无论高还是宽的百分比）都是基于宽度去计算的
+  
+  有一个比较好的padding百分比应用
+
+  比如首页的头图设置padding
+```css
+  .box{
+    padding: 10% 50%;
+    position: relative;
+  }
+
+  .box > img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0
+  }
+```
+这样就实现了5:1的首页头图
+各端效果都可不错。
+
+
+### 另外有下图借助padding实现的效果类似的都很好做
+[](./img/padding.png)
+
+```css
+  .icon-menu{
+    width: 140px;
+    height: 10px;
+    padding: 60px 0;
+    border-top: 10px solid;
+    border-bottom: 10px solid;
+    background-color: currentColor;
+    background-clip: content-box;
+}
+
+.icon-dot{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 10px solid;
+    padding: 50px;
+    background-clip: content-box;
+    background-color: #000;
+}
+```
+
+## margin
+
+- 元素尺寸:
+  - jquery里的 outerWidth/outerHeight 对应元素的border-box，包括了padding和border的尺寸。原生dom里就是offsetHeight/offsetWidth. 也称 元素偏移尺寸
+
+
+- 元素内部尺寸:
+  - jquery里的 innerWidth/innerHeight 对应元素的padding-box，
+  只包含到padding。原生dom里就是clientWidth/clientHeight。
+  又称为元素可视尺寸
+
+
+- 元素外部尺寸:
+  - jquery里的 outerWidth(true)/outerHeight(true)。
+  - 表示元素外部尺寸，包含margin，padding，border。
+  - 也就是margin-box，没有对应的原生dom。
 
 
