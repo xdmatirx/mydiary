@@ -190,13 +190,33 @@ label{
 }
 
 .mar{
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .mar > p{
-    margin-right: 133px;
+    /* margin-left: 133px; */
 }
 
 .mar > img {
+    width: 100px;
+    float: left;
+}
+
+.container{
+    width: 600px;
+    overflow: hidden;
+}
+.container div{
+    width: 50%;
+}
+.leftmar{
+    float: left;
+    text-align: center;
+    margin-bottom: -999px;
+    padding-bottom: 999px;
+}
+.rightmar{
     float: right;
+    padding-bottom: 999px;
+    margin-bottom: -999px;
 }
