@@ -268,3 +268,5 @@ padding看起来不计算高度，但实际时会在盒子周围发送渲染的�
   - 也就是margin-box，没有对应的原生dom。
 
 
+## border属性
+border是不支持百分比的
