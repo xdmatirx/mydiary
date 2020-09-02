@@ -191,6 +191,8 @@ label{
 
 .mar{
     overflow: hidden;
+    border-style: dotted;
+    border: 200px;
 }
 
 .mar > p{
@@ -209,14 +211,63 @@ label{
 .container div{
     width: 50%;
 }
-.leftmar{
-    float: left;
-    text-align: center;
-    margin-bottom: -999px;
-    padding-bottom: 999px;
+
+.boxx{
+    height: 400px;
+    width: 400px;
+    overflow: hidden;
+    position: relative;
 }
-.rightmar{
-    float: right;
-    padding-bottom: 999px;
-    margin-bottom: -999px;
+
+.boxx::before{
+    content: '';
+    position: absolute;
+    background-color: black;
+    width: 300px;
+    height: 300px;
+}
+
+.dotted{
+    /* width: 100%; */
+    /* height: 100%; */
+    /* width: 150px;
+    height: 150px; */
+    border: 149px red dotted;
+    overflow: hidden;
+}
+.dotted::before{
+    position: absolute;
+    background-color: black;
+    width: 400px;
+    height: 300px;
+}
+.add{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border: 2px dashed;
+    color: darkgray;
+}
+.add::before{
+    content: '';
+    width: 36px;
+    border-top: solid 10px;
+    margin: -5px 0 0 -18px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+}
+
+.add::after{
+    content: '';
+    height: 36px;
+    border-left: solid 10px;
+    margin: -18px 0 0 -5px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+}
+
+.add:hover{
+    color: brown;
 }
