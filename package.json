@@ -7,6 +7,7 @@
   },
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.5.0",
+    "prettier": "^2.1.1",
     "vuepress-plugin-autobar": "github:boboidream/vuepress-bar",
     "vuepress-plugin-fulltext-search": "^2.0.3",
     "vuepress-plugin-permalink-pinyin": "^1.0.0",

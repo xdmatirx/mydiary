@@ -12,18 +12,18 @@
   <component name="ChangeListManager">
     <list default="true" id="03c72f98-8195-44cc-ba23-1756225895bb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/docs/diary/diary.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/diary/diary.md" afterDir="false" />
+>>>>>>> 8ebf96e6d74a9e398d9cd929f49b3d8319780d85
       <change beforePath="$PROJECT_DIR$/docs/mycss/css.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mycss/css.md" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/node_modules/" />
-    <ignored path="$PROJECT_DIR$/.tmp/" />
-    <ignored path="$PROJECT_DIR$/temp/" />
-    <ignored path="$PROJECT_DIR$/tmp/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
@@ -40,10 +40,13 @@
       </file>
     </leaf>
   </component>
+=======
+>>>>>>> 8ebf96e6d74a9e398d9cd929f49b3d8319780d85
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -54,6 +57,8 @@
       </list>
     </option>
   </component>
+=======
+>>>>>>> 8ebf96e6d74a9e398d9cd929f49b3d8319780d85
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
@@ -65,6 +70,7 @@
   </component>
   <component name="ProjectId" id="1fonRBXBymNRnb2PfJIT2CmDPsx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+<<<<<<< HEAD
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -101,6 +107,8 @@
       </pane>
     </panes>
   </component>
+=======
+>>>>>>> 8ebf96e6d74a9e398d9cd929f49b3d8319780d85
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -108,10 +116,11 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="D:\code\github\css_world\vuepress_note\node_modules\prettier" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -120,19 +129,7 @@
       <recent name="D:\code\github\css_world\vuepress_note\docs\html" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -151,6 +148,7 @@
       <workItem from="1597590951861" duration="1285000" />
       <workItem from="1597853817244" duration="1138000" />
       <workItem from="1597939513775" duration="393000" />
+<<<<<<< HEAD
       <workItem from="1598629862835" duration="1999000" />
       <workItem from="1598800351853" duration="599000" />
       <workItem from="1598889218019" duration="280000" />
@@ -185,22 +183,26 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
+=======
+      <workItem from="1598629862835" duration="1836000" />
+      <workItem from="1598861765201" duration="84000" />
+      <workItem from="1598861857368" duration="61000" />
+      <workItem from="1598861925440" duration="165000" />
+      <workItem from="1598945283543" duration="982000" />
+      <workItem from="1598958697620" duration="1589000" />
+    </task>
+    <servers />
+  </component>
+>>>>>>> 8ebf96e6d74a9e398d9cd929f49b3d8319780d85
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -219,8 +221,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" />
   </component>
@@ -286,5 +290,19 @@
         </state>
       </provider>
     </entry>
+=======
+    <state x="2659" y="273" key="FileChooserDialogImpl" timestamp="1598862072329">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2659" y="273" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598862072329" />
+    <state x="2168" y="121" width="1217" height="714" key="SettingsEditor" timestamp="1598946519790">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2168" y="121" width="1217" height="714" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598946519790" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1598959036394">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598959036394" />
+>>>>>>> 8ebf96e6d74a9e398d9cd929f49b3d8319780d85
   </component>
 </project>

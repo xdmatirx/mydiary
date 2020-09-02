@@ -106,7 +106,7 @@ height相对简单，有一个点就是，height的100%是作用于父元素的�
 min-height和min-width的初始值是auto不是0.
 ```css
 .box{
-  min-height: 0px
+  min-height: 0px;
   transition: min-height: 0.3s
 }
 .box:hover {
@@ -267,6 +267,66 @@ padding看起来不计算高度，但实际时会在盒子周围发送渲染的�
   - 表示元素外部尺寸，包含margin，padding，border。
   - 也就是margin-box，没有对应的原生dom。
 
+margin 和 padding几乎是互补的态势,
+对于padding，设置了width或者 保持包裹性时，会改变元素的可视尺寸。
+对于margin相反，设置了width或者元素保持包裹性后，就不会改版尺寸。
+除非元素时充分可利用空间的时候，margin财气效果。
 
-## border属性
-border是不支持百分比的
+margin的百分比值和padding一样，也是相对于宽度计算的。
+
+margin合并发生在：
+- 块级元素上，但是不包括浮动 和 绝对定位元素
+- 只发生在垂直方向上（前提是没改过writing mode）
+
+发生合并的三种情况：
+
+- 相邻兄弟 元素的margin合并
+- 父级元素 与 它的第一个/最后一个子元素合并
+- 空元素的合并
+
+合并的计算规则：
+- 正正取大值
+- 正负则相加
+- 负负取最负
+
+## margin 失效情况
+
+1. display 的计算值 inline的非替换元素的垂直margin无效;
+但对于内联替换元素 垂直margin有效。
+
+2. 表格中td、 tr 元素或者设置display 为 table-cell和table-row的元素都是无效的。
+但计算值是table-caption、table或inline-table则没问题。
+
+3. margin发生了合并现象，则可能出现无效的情况
+
+4. 绝对定位的元素的非定位方向上，再去设置margin无效，因为绝对定位已经脱离了正常
+文档，不再和别的东西接触。
+
+5. 在定高或定宽容器中，非定位方向上设置marign也是无效的，只会影响父元素或者后面的元素。
+
+
+## border
+
+首先 border不支持百分比，但border-width支持
+- thin 1px
+- medium 3px
+- thick 4px
+
+### border类型
+
+default-style:
+```css
+  border-style: none
+```
+2. border-style: solid
+
+3. border-style: dashed 虚线 虚框
+
+4. dotted 原点 (其实大多是方点)
+
+5. double 双实线 border没有半像素的概念
+
+### border-color 和 color
+border-color在没指定情况下默认为color的颜色。
+
+
