@@ -328,5 +328,14 @@ default-style:
 
 ### border-color 和 color
 border-color在没指定情况下默认为color的颜色。
+border四边其实是三角形般形状相连，如果需要设计梯形、三角形一类的，
+都可以border设计。
+
+前一章节提到了可以用padding margin实现等高（借助-margin，正padding）
+
+这里用border实现。
+# 例子暂时看不懂。。
+
+
 
 

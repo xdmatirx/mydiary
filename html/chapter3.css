@@ -271,3 +271,65 @@ label{
 .add:hover{
     color: brown;
 }
+
+.triangle{
+    width: 0px;
+    border-width: 10px 25px;
+    border-style: solid;
+    border-color: red green yellow salmon;
+    /*border-color: red  transparent transparent transparent;*/
+}
+
+.test-font{
+    width: 200px;
+    font-size: 30px;
+    line-height: 120px;
+    background-color: yellow;
+
+}
+.fonttest{
+    font-size: 24px;
+}
+
+.test-font span{
+    background-color: white;
+}
+.t1 span{
+    background-color: red;
+}
+.t2 span{
+    background-color: green;
+}
+.t3 span{
+    background-color: goldenrod;
+}
+.t1{
+    line-height: 2;
+}
+.t2{
+    line-height: 1.5;
+}
+.t3{
+    line-height: 0.5;
+}
+
+.imgheight{
+    line-height: 120px;
+}
+
+.box-content{
+    width: 300px;
+    /*height: 180px;*/
+    line-height: 100px;
+    background-color: rosybrown;
+    /*vertical-align: middle;*/
+
+    /*margin: ;*/
+}
+
+.box-content div{
+    display: inline-block;
+    line-height: 20px;
+    vertical-align: middle;
+
+}
