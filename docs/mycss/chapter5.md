@@ -73,6 +73,49 @@ body {
  line-height: 1.5em;
 }
 ```
-这里body的line-height都是21px，但子元素就不一样了/
+这里body的line-height都是21px，但子元素就不一样了
+但body里面的子元素影响就不一样了
 
+```css
+line-height: 150%;
+line-height: 1.5em;
+```
+这两者的子元素的line-height 是会继承父元素的line-height的。
+也就是父元素的21px;
+但line-height: 1.5的子元素不会继承，他们的line-height是会乘以当前子元素的font-size的。
+所以比较好。
+
+一般布局中，重视图文展示的，比如博客，论坛、公众号这列，最好使用数值，且考虑文章阅读舒适性，
+值一般再1.6~1.8之间。
+
+如果是重视布局结构的，使用长度值或者数值都可。
+但基本大多网址都是很用数值作为全局line-height。
+
+如果是长度值，建议为line-height:20px(1080p)
+如果是数值，建议方便计算，比如1.5
+
+### line-height有一个大值的属性
+
+父子元素都包含line-height时，由两者的大值觉得最终的line-height
+
+## vertical-align
+
+可分为五类:
+
+- 线类 baseline, top, middle, bottom
+- 文本类 text-top，text-bottom
+- 上标、下标类，sub,super，
+- 数值类 如20px, 2em, 
+- 百分比 20%
+
+默认值为baseline
+对于文字而言，就是字母x的下沿作为基线，故内联元素都是沿着字母x的下沿对齐。
+但对于图片这种替换元素，通常使用元素本身的下边缘作为基线。
+所以图文并排的时候，文字底端是和图片底端贴着的。
+但中文通常还是会比x下沿要低些。
+
+ 
+
+
+ 
 
