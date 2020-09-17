@@ -1,0 +1,25 @@
+.lbox{
+  line-height: 32px;
+  font-size: 24px;
+}
+.lbox > span{
+
+}
+.box-img{
+  width: 500px;
+  outline: 1px solid cornflowerblue;
+  text-align: center;
+  font-size: 20px;
+}
+.box-img>img{
+  height: 90px;
+}
+
+.dib-baseline{
+  display: inline-block;
+  width: 150px;
+  height: 100px;
+  border: 1px solid blue;
+  background-color: #f0f2f9;
+}
+

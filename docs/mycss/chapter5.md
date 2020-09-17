@@ -114,7 +114,125 @@ line-height: 1.5em;
 所以图文并排的时候，文字底端是和图片底端贴着的。
 但中文通常还是会比x下沿要低些。
 
- 
+vertical-align 兼容性好，
+vertical-align的百分比是基於line-height計算的。 但很少用。
+line-height則是基於font-size計算的。
+
+vertical-align是有使用的前提的，即只能应用于内联元素以及display为table-cell的元素。
+
+换而言之，就是display为inline,inline-block,inline-table,table-cell元素才能使用。
+默认情况下，span,strong,em等内联元素都ok，img，button，imput等替换元素还有td单元格时支持vertical-align的，
+其他块级元素不支持。
+
+但不是说内联元素一定是支持的，假如别的属性偷偷修改了display属性，那元素也就不支持了
+
+```css
+.example{
+  float: left;
+  vertical-align: middle; /* 没有用 */
+}
+
+.example{
+  position: absolute;
+  vertical-align: middle; /* 也没有用 */
+}
+```
+
+对于字符而言，font-size越大的字符基线就越靠下，因为字母首先都是基于基线对齐的，所以当字号大小不一时，彼此就会发生上下移动；
+如果位移足够大，会超过行高的限制。
+
+解决方法也有:
+1.将内外的文字都设置为top、bottom、middle对齐，不可基线对齐。
+2.修改为较大的line_height
+3.修改整行高度，让改行的空白幽灵节点与内部高度一致
+
+#### 常见的图片底部存在由间隙的原因：
+- 因为line-height比font-sizze大的存在，使得文字下方必定有一些半行距，而图片是一个替换元素，
+基线是自身的下沿。根据定义，默认和基线（x的下沿）对齐，然后字母x下方产生的把半行距放到了图片下方，也就出现了间隙。
+
+解决方法：
+- 图片块状化，设置为block，table这种。inline-block没有用。
+- 将容器的line-height设置的够小 比如line-height为0
+-  容器的font-size足够小，比如font-size为0
+- 图片设置其他的vertiacl-align 比如top、bottom、middle之间任意一个。
+
+text-align: justify用于两端对齐的效果。
+
+### vertical-align的线性类属性。
+
+之前说的，对于文本类元素，vertical-align默认值baseline就在字符x的下边缘，
+对于替换元素就是替换元素下边缘。
+### inline-block
+但是，如果是inline-block元素，规则更复杂，一个inline-block元素，如果里面没有内联元素，
+或者overflow不是visible，那该元素的基线（baseline）就是margin的底边缘；
+否则其基线就是元素里面最后一行内联元素的基线。
+
+
+inline-block与文字在一起时，需要文字图片在一行
+```css
+  .icon-line{
+    line-height: 20px; // 任意设置，作为图标文字的整体高度，20还算普遍
+  }
+  .icon-delete{
+    background: url("./img/z.png") no-repeat center;
+  }
+  .icon{
+    display: inline-block;
+    width: 20px;
+    height: 20px; //这里宽高需要和line-height一致，使得水平对齐
+    text-indent: -999em;
+    white-space: nowrap;
+    letter-spacing: -1em;
+  }
+  i:before{
+    content: '/3000'; // 空格 用来填充inline-block内部，这样使得图片底部和内部的文字底部对齐，内外文字底端对齐
+  }
+  p{
+    font-size: 16px; // 这里随心所欲控制大小  
+}
+```
+```html
+<div class="icon-line">
+  <p class="font">
+    <i class="icon-delete icon"></i>
+    文字xs
+  </p>
+</div>
+```
+
+### vertical-align的bottom和top
+
+垂直上、下边缘对齐
+
+top具体定义：
+- 内联元素：元素顶部和当前行框盒子的顶部对齐
+- table-cell元素：元素的padding-top与表格行的顶部对齐
+换而言之：如果是内联元素，则和该行位置最高的内联元素顶部对齐；
+如果是table-cell,脑补成td元素，和tr上部对齐
+
+bottom类似;
+
+内联元素的上下边缘对齐的边缘指当前 行框盒子 的上下边缘，并非块状容器的上下边缘。
+
+### vertical-align的middle
+- 对于内联元素，middle在x的中心线处，而实际上x的中心线是略微偏下的，字号越大越明显。
+- table-cell元素：单元格相对于外表格居中
+
+vertical-align的文本类属性指text-top、text-bottom
+- text-top：盒子顶部和父级内容区域的顶部对齐
+- text-bottom：盒子底部和父级内容区域的底部对齐
+
+这里的父级内容区域指的是父级元素当前font-size和font-family下应有的内容区域大小。
+
+假如元素后面有一个和它父元素font-size、font-family一样的内容，使用vertical-align text-top表示该元素上边缘和内容区域对齐。
+
+但这没什么用，知道就好。
+
+
+
+
+
+
 
 
  

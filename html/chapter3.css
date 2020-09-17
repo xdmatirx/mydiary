@@ -333,3 +333,10 @@ label{
     vertical-align: middle;
 
 }
+
+.lbox{
+    line-height: 32px !important;
+}
+.lbox > span{
+    font-size: 24px !important;
+}
