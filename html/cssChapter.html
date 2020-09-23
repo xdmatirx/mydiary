@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>chapter3</title>
 <!--    <link rel="stylesheet" href="chapter3.css">-->
-    <link rel="stylesheet" href="chapter5.css">
+<!--    <link rel="stylesheet" href="chapter5.css">-->
     <style>
       .dib-baseline{
         height: 120px;
@@ -31,6 +31,64 @@
       }
       p{
         font-size: 18px;
+      }
+      .container{
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+        font-size: 0;
+        text-align: center;
+      }
+      .container:after{
+        content: "";
+        display: inline-block;
+        height: 60%;
+        vertical-align: middle;
+      }
+      .content{
+        display: inline-block;
+        vertical-align: middle;
+        background-color: #fff;
+      }
+      .detail{
+        font-size: 15px;
+        width: 200px;
+        height: 300px;
+      }
+      /*.fat{*/
+      /*  width: 600px;*/
+      /*}*/
+      .float{
+        width: 250px;
+      }
+      .float img{
+        float: left;
+        margin-right: 60px;
+      }
+      .bobox>a:first-child{
+        float: left;
+      }
+      .bobox>a:last-child{
+        float: right;
+      }
+      h3{
+        text-align: center;
+      }
+      .animal{
+        overflow: hidden;
+        /*margin-left: 150px;*/
+      }
+      .containerid{
+        height: 120px;
+        overflow: hidden;
+        width: 300px;
+      }
+      .box{
+        height: 200px;
+
       }
     </style>
 </head>
@@ -148,7 +206,25 @@
     <div  class="icon-d">
       <p><i class="icon-delete icon"></i>xx删除</p>
     </div>
+  <div class="fat">
+    <div class="float">
+      <img src="pic.png" width="120px" alt="">
+      <p class="animal">kalsdjfkl角度考虑飞机喀什的拉dfasdf打发士大夫撒地方法基</p>
+    </div>
+  </div>
+  <div class="bobox">
+    <a href="">上一周</a>
+    <a href="">下一周</a>
 
+    <h3>sajkdlfj</h3>
+  </div>
+  <div>
+    <div class="containerid">
+      <div class="box">s</div>
+      <a id="1">zzzzz</a>
+    </div>
+    <a href="#1">mmmmm</a>
+  </div>
 
 </body>
 
