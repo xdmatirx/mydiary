@@ -3,7 +3,7 @@ home: true
 
 
 actionText: hey baby
-actionLink: /mycss/css.html
+actionLink: /diary/
 features:
 
 - title: 吨吨爱吨吨喝水

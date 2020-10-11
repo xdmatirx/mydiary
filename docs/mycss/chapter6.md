@@ -221,3 +221,117 @@ absolute存在的时候float无效。
 
 ## !6.5.1先跳过
 
+#### absolute绝对定位
+absolute是非常独立的css属性，不依赖其他样式、属性可以完成
+
+利用position absolute完成了很多定位效果，但比较适合静态的页面；
+如果是二级菜单的定位显示的或者其他动态的，还是用js比较好。
+
+无论是内联元素还是块状元素，使用position: absolute前位置在哪里，使用后仍在同一位置。
+
+但是浮动和绝对定位遇上时，有一些奇怪的问题。
+
+```html
+<h4>全兼容版本</h4>
+<p class="compa"><img src="1.jpg"></p>
+```
+```css
+p {
+    width: 300px; height: 120px;
+    background-color: #eef0f6;
+    text-align: center;
+}
+img {
+    position: absolute;
+}
+
+/* IE兼容处理 */
+.compa {
+    font-size: .1px;
+    font-size: -webkit-calc(1px - 1px);
+}
+.compa:before {
+    content: "\2002";
+}
+```
+可以实现图片前面的空白幽灵节点的居中，再给一个margin-left一半图片宽度负值大小即可图片居中。
+
+
+如果
+overflow 不是定位元素，同时绝对定位元素和 overflow 容器之间也没有定位元素，则
+overflow 无法对 absolute 元素进行剪裁。
+```html
+<div style="overflow: hidden;">
+ <img src="1.jpg" style="position: absolute;">
+</div>
+//overflow 元素父级是定位元素也不会剪裁，例如：
+<div style="position: relative;">
+ <div style="overflow: hidden;">
+ <img src="1.jpg" style="position: absolute;">
+ </div>
+</div> 
+```
+
+但是，如果 overflow 属性所在的元素同时也是定位元素，里面的绝对定位元素会被剪裁：
+<div style="overflow: hidden; position: relative;">
+ <img src="1.jpg" style="position: absolute;"> <!-- 剪裁 -->
+</div>
+如果 overflow 元素和绝对定位元素之间有定位元素，也会被剪裁：
+<div style="overflow: hidden;">
+ <div style="position: relative;">
+ <img src="1.jpg" style="position: absolute;"> <!-- 剪裁 -->
+ </div>
+</div>
+如果 overflow 的属性值不是 hidden 而是 auto 或者 scroll，即使绝对定位元素高宽
+比 overflow 元素高宽还要大，也都不会出现滚动条。例如，下面的 HTML 和 CSS 代码：
+<div class="box">
+ <img src="1.jpg">
+</div>
+.box {
+ width: 300px; height: 100px;
+ background-color: #f0f3f9;
+ overflow: auto;
+}
+.box > img {
+ width: 256px; height: 192px;
+ position: absolute;
+} 
+
+图片高度 256px 比容器.box 高度 100px 明显高出了一截，但是，没有滚动条出现。
+实际开发的时候，绝对定位元素和非绝对定位元素往往可能混杂在一起，虽然绝对定位元
+素不能让滚动条出现，但是非绝对定位元素可以，于是，就可能出现另外一种很有特色的现象，
+
+### clip属性，但想要起作用，需要元素得是绝对定位或者固定定位
+即position为absolute或则fixed
+
+clip: rect(top, right, bottom, left)
+clip通常使用在以下两种情景：
+1. 对于普通元素或者absolute定位的元素，利用overflow的元素可以裁剪；
+但对于fixed的 overflow无效，因为fixed固定定位元素的包含块是根元素。
+
+最佳可访问性隐藏
+给需要隐藏但有希望给搜索的元素添加该属性即可
+ 利于seo
+```css
+.clip {
+ position: absolute;
+ clip: rect(0 0 0 0);
+} 
+```
+添加该属性就可以实现隐藏性的访问。 
+clip与其他隐藏属性的对比:
+1. display: none / visibiliy: hidden的方式下，其中按钮无法被focus，
+    其次是IE8下提交行为会丢失
+2. 透明度为0去覆盖也是可以的，移动端项目建议这样，但pc端不建议，因为可能需要各自计算具体覆盖的位置。
+
+3. 还有一种隐藏式访问
+```css
+.abs-out{
+position: absolute;
+left: -999px;
+top: -999px}
+```
+这样看了，pc适合clip，移动适合transparent为0来覆盖。
+
+总结： clip隐藏就仅仅决定了哪部分可见，非可见的部分是无法响应点击事件的；
+其次，虽然视觉上隐藏了，但元素的尺寸依然还是保留原本的样子

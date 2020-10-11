@@ -1,6 +1,6 @@
 
 module.exports = {
-    title: 'Vuepress介绍',
+    title: '超级爱吨吨',
     base: '/mydiary/',
     description: '帮助个人博客或技术文档',
     themeConfig: {
