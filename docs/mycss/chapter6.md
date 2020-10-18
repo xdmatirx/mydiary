@@ -256,10 +256,10 @@ img {
 ```
 可以实现图片前面的空白幽灵节点的居中，再给一个margin-left一半图片宽度负值大小即可图片居中。
 
-
 如果
 overflow 不是定位元素，同时绝对定位元素和 overflow 容器之间也没有定位元素，则
 overflow 无法对 absolute 元素进行剪裁。
+
 ```html
 <div style="overflow: hidden;">
  <img src="1.jpg" style="position: absolute;">
@@ -284,9 +284,14 @@ overflow 无法对 absolute 元素进行剪裁。
 </div>
 如果 overflow 的属性值不是 hidden 而是 auto 或者 scroll，即使绝对定位元素高宽
 比 overflow 元素高宽还要大，也都不会出现滚动条。例如，下面的 HTML 和 CSS 代码：
+
+```html
 <div class="box">
- <img src="1.jpg">
+ 	<img src="1.jpg">
 </div>
+```
+
+```css
 .box {
  width: 300px; height: 100px;
  background-color: #f0f3f9;
@@ -296,6 +301,7 @@ overflow 无法对 absolute 元素进行剪裁。
  width: 256px; height: 192px;
  position: absolute;
 } 
+```
 
 图片高度 256px 比容器.box 高度 100px 明显高出了一截，但是，没有滚动条出现。
 实际开发的时候，绝对定位元素和非绝对定位元素往往可能混杂在一起，虽然绝对定位元
@@ -312,6 +318,7 @@ clip通常使用在以下两种情景：
 最佳可访问性隐藏
 给需要隐藏但有希望给搜索的元素添加该属性即可
  利于seo
+
 ```css
 .clip {
  position: absolute;
@@ -335,3 +342,94 @@ top: -999px}
 
 总结： clip隐藏就仅仅决定了哪部分可见，非可见的部分是无法响应点击事件的；
 其次，虽然视觉上隐藏了，但元素的尺寸依然还是保留原本的样子
+
+浮动与绝对定位有一定的冲突，尤其时无依赖的绝对定位和浮动遇上的话。会出现浏览器之前的小问题
+
+
+
+absolute && text-align
+
+本身text-align是不会影响absolute或者float后的元素的，因为设置absolute或者float后，元素会块状化 ,但内联元素前面存在一个空白幽灵节点，他会居中，导致图片就会偏后，所以得利用margin-left负一半图片宽回去。
+
+以下是全兼容版本。
+
+```html
+<p class='compa'>
+    <img src='1.png'>
+</p>
+```
+
+```css
+p {
+    width: 300px; height: 120px;
+    background-color: #eef0f6;
+    text-align: center;
+}
+img {
+    position: absolute;
+}
+
+/* IE兼容处理 */
+.compa {
+    font-size: .1px;
+    font-size: -webkit-calc(1px - 1px);
+}
+.compa:before {
+    content: "\2002";
+}
+```
+只有当absolute遇上left/top/right bottom才变成了真正的绝对定位元素。
+此时absolute的元素丢失原本相对特性，会相对于定位元素进行left top方位的对齐。
+
+绝对定位居中
+```css
+  .element{
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px; /* 这里是宽高的一半 */
+    margin-top: -100px;
+  }
+```
+第二种，但这个方法可能导致ios微信闪退
+```css
+  .element{
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) /* 即自身的尺寸一半 */
+  }
+```
+首推呢，还是下面的
+```css
+  .element{
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+```
+
+### 接着是relative对absolute的限制
+relative有两大特性 
+1. 相对自身原始的位置进行位移（具体的数值时）
+2. 无侵入，意思是进行定位偏移的时候，是不会影响周围元素的。
+当使用百分比进行偏移时，是相对于器包含块的。
+
+如果父级的高度不是格式化的高度，那么relative的百分比高度等同于 0
+
+1. 尽量不适应relative偏移定位，如果需要，可以考虑试试无依赖的绝对定位
+2. 如果场景受限，必须使用relative，就尽量少影响剩余的布局。
+
+### fixed定位
+fixed的包含块是根元素，可以理解为<html> 
+
+

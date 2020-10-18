@@ -2,7 +2,7 @@
 module.exports = {
     title: '超级爱吨吨',
     base: '/mydiary/',
-    description: '帮助个人博客或技术文档',
+    description: 'muamua',
     themeConfig: {
       lastUpdated: 'Last Updated',
       smoothScroll: true,
