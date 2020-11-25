@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>异步 事件循环 任务队列 | 超级爱吨吨</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    
+    <meta name="description" content="muamua">
+    <link rel="preload" href="/mydiary/assets/css/0.styles.fb3ba93f.css" as="style"><link rel="preload" href="/mydiary/assets/js/app.810fe47c.js" as="script"><link rel="preload" href="/mydiary/assets/js/2.17ad9e19.js" as="script"><link rel="preload" href="/mydiary/assets/js/24.3733b365.js" as="script"><link rel="prefetch" href="/mydiary/assets/js/10.fd1b8081.js"><link rel="prefetch" href="/mydiary/assets/js/11.05f3a654.js"><link rel="prefetch" href="/mydiary/assets/js/12.c915a22e.js"><link rel="prefetch" href="/mydiary/assets/js/13.3f80967e.js"><link rel="prefetch" href="/mydiary/assets/js/14.e6ff2188.js"><link rel="prefetch" href="/mydiary/assets/js/15.889a4032.js"><link rel="prefetch" href="/mydiary/assets/js/16.b651bfae.js"><link rel="prefetch" href="/mydiary/assets/js/17.bfdb4fda.js"><link rel="prefetch" href="/mydiary/assets/js/18.bae4c4b7.js"><link rel="prefetch" href="/mydiary/assets/js/19.4ad98f57.js"><link rel="prefetch" href="/mydiary/assets/js/20.843b3589.js"><link rel="prefetch" href="/mydiary/assets/js/21.32568880.js"><link rel="prefetch" href="/mydiary/assets/js/22.2f37cb98.js"><link rel="prefetch" href="/mydiary/assets/js/23.21039632.js"><link rel="prefetch" href="/mydiary/assets/js/3.19cd2de2.js"><link rel="prefetch" href="/mydiary/assets/js/4.f78f7964.js"><link rel="prefetch" href="/mydiary/assets/js/5.03de1341.js"><link rel="prefetch" href="/mydiary/assets/js/6.a53167be.js"><link rel="prefetch" href="/mydiary/assets/js/7.e8d49dd5.js"><link rel="prefetch" href="/mydiary/assets/js/8.dcc16878.js"><link rel="prefetch" href="/mydiary/assets/js/9.c6337287.js">
+    <link rel="stylesheet" href="/mydiary/assets/css/0.styles.fb3ba93f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/mydiary/" class="home-link router-link-active"><!----> <span class="site-name">超级爱吨吨</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/mydiary/css/css_chapter.html" class="nav-link">
+  HOME
+</a></div><div class="nav-item"><a href="https://xdmatirx.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/mydiary/css/css_chapter.html" class="nav-link">
+  HOME
+</a></div><div class="nav-item"><a href="https://xdmatirx.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Diary</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Mycss</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Notknow Js</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Second Js</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/mydiary/secondJs/generator.html" class="sidebar-link">生成器generator</a></li><li><a href="/mydiary/secondJs/type.html" class="sidebar-link">type</a></li><li><a href="/mydiary/secondJs/value.html" class="sidebar-link">value</a></li><li><a href="/mydiary/secondJs/异步.html" class="active sidebar-link">异步 事件循环 任务队列</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/mydiary/secondJs/异步.html#回调" class="sidebar-link">回调</a></li><li class="sidebar-sub-header"><a href="/mydiary/secondJs/异步.html#promise" class="sidebar-link">promise</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="异步-事件循环-任务队列"><a href="#异步-事件循环-任务队列" class="header-anchor">#</a> 异步 事件循环 任务队列</h1> <p>任务队列（job queue）概念:
+这是一个挂载在事件循环队列的每个tick之后的 一个队列
+在事件循环的每个tick中，可能出现异步操作，这些操作的将来部分不会阻塞，
+而会在当前tick的任务队列末尾添加一个 任务，将来去做。</p> <h2 id="回调"><a href="#回调" class="header-anchor">#</a> 回调</h2> <p>嵌套回调和链式回调形式影响我们人脑思考的顺序，也不符合我们的逻辑</p> <p>其次是采用了回调函数的是否可靠的问题，其可能出现以下问题</p> <ol><li>调用回调过早</li> <li>调用回调过晚，甚至没调用</li> <li>调用回调的次数太少或则和太多</li> <li>没有把所需的环境/参数成功传回来</li> <li>吞掉了可能出现的错误或者异常。</li> <li>...
+缺乏顺序性和可信任性。</li></ol> <p>以前的回调
+// 读取文件
+// 也可以是发请求等
+var fs = require(&quot;fs&quot;)
+fs.readFile('file.path', 'utf8', function(err, value) {
+if(err) {
+console.log(err)
+} else {
+console.log(value)
+}
+})
+是这样通过一个回调监听的。
+但容易出现callback hell
+需要对异步接口处理成Promise的方式。
+有很多库都直接转换，如
+bluebird 模块里有 promisify 方法</p> <p>es6-promisify 模块</p> <p>ThinkJS 里的 promisify 方法</p> <p>var myPromise = function(fun, receiver) {
+return function() {
+let args = [].slice(arguments)
+return new Promise((resolve, reject) =&gt; {
+fun.apply(reveiver, [].concat(args, [function(err, data) {
+return err ? reject(err) : resolve(data)
+}]))
+})
+}
+}</p> <h2 id="promise"><a href="#promise" class="header-anchor">#</a> promise</h2> <p>所以出现了promise来解决回调的多个问题</p> <p>promise对于以上5个问题的解决：</p> <ol><li><p>调用过早
+不存在，因为传给promise的必定执行异步操作，不会被同步检测到。</p></li> <li><p>调用过晚
+Promise创建的对象在调用resolve 或者 reject时，必然会触发
+promise.then(..)里面的回调。一定会在下一个异步事件点⬆上触发。</p></li> <li><p>回调未调用
+可以借助于添加一个超时promise进行竞态</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">timeoutPromise</span><span class="token punctuation">(</span><span class="token parameter">delay</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+     <span class="token function">reject</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span> delay<span class="token punctuation">)</span>
+ <span class="token punctuation">}</span>     
+<span class="token punctuation">}</span>
+Promise<span class="token punctuation">.</span><span class="token function">race</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+ promiseA<span class="token punctuation">,</span>
+ <span class="token function">timeoutPromise</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><p>调用次数过少或者过多
+正确的就是应该 1 次。
+promise响应函数只会执行一次，除非你也触发了多次</p></li></ol> <h3 id="promise-api"><a href="#promise-api" class="header-anchor">#</a> Promise API</h3> <p>var p = new Promise(resolve, reject) {
+// resolve 用于成功
+// reject  用于失败
+}</p> <p>以下两个promise是等价的</p> <p>var p1 = new Promise((resolve, reject) =&gt; {
+resovle('yeah')
+})</p> <p>var p2 = Promise.resolve('yeah')</p> <p>但是呢，Promise.resolve也会展开传进来的对象的thenable值，这种情况下则返回thenable的值</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> fulfilled <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">then</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'yyyy'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> rejected <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">then</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>fulfilled<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>rejected<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// yyyy</span>
+  <span class="token comment">// a</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/mydiary/secondJs/value.html" class="prev">
+        value
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/mydiary/assets/js/app.810fe47c.js" defer></script><script src="/mydiary/assets/js/2.17ad9e19.js" defer></script><script src="/mydiary/assets/js/24.3733b365.js" defer></script>
+  </body>
+</html>

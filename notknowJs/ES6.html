@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ES6新增的变量 let const | 超级爱吨吨</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    
+    <meta name="description" content="muamua">
+    <link rel="preload" href="/mydiary/assets/css/0.styles.fb3ba93f.css" as="style"><link rel="preload" href="/mydiary/assets/js/app.810fe47c.js" as="script"><link rel="preload" href="/mydiary/assets/js/2.17ad9e19.js" as="script"><link rel="preload" href="/mydiary/assets/js/17.bfdb4fda.js" as="script"><link rel="prefetch" href="/mydiary/assets/js/10.fd1b8081.js"><link rel="prefetch" href="/mydiary/assets/js/11.05f3a654.js"><link rel="prefetch" href="/mydiary/assets/js/12.c915a22e.js"><link rel="prefetch" href="/mydiary/assets/js/13.3f80967e.js"><link rel="prefetch" href="/mydiary/assets/js/14.e6ff2188.js"><link rel="prefetch" href="/mydiary/assets/js/15.889a4032.js"><link rel="prefetch" href="/mydiary/assets/js/16.b651bfae.js"><link rel="prefetch" href="/mydiary/assets/js/18.bae4c4b7.js"><link rel="prefetch" href="/mydiary/assets/js/19.4ad98f57.js"><link rel="prefetch" href="/mydiary/assets/js/20.843b3589.js"><link rel="prefetch" href="/mydiary/assets/js/21.32568880.js"><link rel="prefetch" href="/mydiary/assets/js/22.2f37cb98.js"><link rel="prefetch" href="/mydiary/assets/js/23.21039632.js"><link rel="prefetch" href="/mydiary/assets/js/24.3733b365.js"><link rel="prefetch" href="/mydiary/assets/js/3.19cd2de2.js"><link rel="prefetch" href="/mydiary/assets/js/4.f78f7964.js"><link rel="prefetch" href="/mydiary/assets/js/5.03de1341.js"><link rel="prefetch" href="/mydiary/assets/js/6.a53167be.js"><link rel="prefetch" href="/mydiary/assets/js/7.e8d49dd5.js"><link rel="prefetch" href="/mydiary/assets/js/8.dcc16878.js"><link rel="prefetch" href="/mydiary/assets/js/9.c6337287.js">
+    <link rel="stylesheet" href="/mydiary/assets/css/0.styles.fb3ba93f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/mydiary/" class="home-link router-link-active"><!----> <span class="site-name">超级爱吨吨</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/mydiary/css/css_chapter.html" class="nav-link">
+  HOME
+</a></div><div class="nav-item"><a href="https://xdmatirx.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/mydiary/css/css_chapter.html" class="nav-link">
+  HOME
+</a></div><div class="nav-item"><a href="https://xdmatirx.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Diary</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Mycss</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Notknow Js</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/mydiary/notknowJs/ES6.html" aria-current="page" class="active sidebar-link">ES6新增的变量 let const</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/mydiary/notknowJs/ES6.html#let" class="sidebar-link">let</a></li><li class="sidebar-sub-header"><a href="/mydiary/notknowJs/ES6.html#const" class="sidebar-link">const</a></li><li class="sidebar-sub-header"><a href="/mydiary/notknowJs/ES6.html#块作用域的概念" class="sidebar-link">块作用域的概念</a></li><li class="sidebar-sub-header"><a href="/mydiary/notknowJs/ES6.html#解构赋值" class="sidebar-link">解构赋值</a></li></ul></li><li><a href="/mydiary/notknowJs/ES6-4.html" class="sidebar-link">字符串扩展</a></li><li><a href="/mydiary/notknowJs/class.html" class="sidebar-link">class</a></li><li><a href="/mydiary/notknowJs/notknowjs.html" class="sidebar-link">1作用域</a></li><li><a href="/mydiary/notknowJs/面向委托prototype设计.html" class="sidebar-link">prototype 委托设计模式</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Second Js</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="es6新增的变量-let-const"><a href="#es6新增的变量-let-const" class="header-anchor">#</a> ES6新增的变量 let const</h1> <h2 id="let"><a href="#let" class="header-anchor">#</a> let</h2> <p>相对于var来说，只在其所在的代码块内生效
+别适合for循环的变量使用
+与var的区别：</p> <ol><li>不存在变量提升</li> <li>会出现暂时性死区概念，在一个代码块中，let声明的变量在声明之前都不可使用</li> <li>同一个作用域中，不允许重复声明，防止了覆盖问题。</li></ol> <p>如果在某一个作用域内使用了let 、const，那该区域会形成一个封闭的区域，只要在声明前使用这些let const变量就报错。reference error</p> <h2 id="const"><a href="#const" class="header-anchor">#</a> const</h2> <p>声明一个只读的变量，常量值不可更改。
+且在声明初期就必须直接赋值，作用域和let相同，</p> <ol><li>存在暂时性死区，只可在声明后使用。</li> <li>同一个作用域，不可重复声明</li> <li>不存在变量提升
+const的本质是不许指向的变量内存地址改变</li></ol> <h2 id="块作用域的概念"><a href="#块作用域的概念" class="header-anchor">#</a> 块作用域的概念</h2> <p>外层块中的变量无法读取内层的，但内层可以定义和读取外层的同名变量。</p> <h2 id="解构赋值"><a href="#解构赋值" class="header-anchor">#</a> 解构赋值</h2> <p>let [a, b, c] = [1, 2, 4]</p> <p>let [m, ...n] = [1, 454, 666, 845]
+如果不完全解构，会赋值undefined
+只要具备Iterator接口，就可进行解构赋值。</p> <p>同样，解构赋值允许给默认值
+let [foo = true] = []</p> <p>object也可解构，不过是基于变量名赋值的。
+let {obj, bar} ={obj: 'ppp', bar:'zzz'} //都有值
+let {obj, bar} ={obj: 'ppp', MarB:'zzz'} // 第二个不行了</p> <p>解构赋值的用途
+交换
+[x, y] = [y, x]</p> <p>提取json数据
+let jsonData =  {
+id: 42,
+status: 0,
+data: {z:'s', dd: 'z'}
+}</p> <p>let {id, status, data: mylist} = jsonData</p> <p>对象的解构赋值是找到同名属性名，在赋值给对应的变量</p> <p>解构是可以赋予默认值的。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">10/30/2020, 5:53:25 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/mydiary/mycss/css.html" class="prev">
+        css_chapter3
+      </a></span> <span class="next"><a href="/mydiary/notknowJs/ES6-4.html">
+        字符串扩展
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/mydiary/assets/js/app.810fe47c.js" defer></script><script src="/mydiary/assets/js/2.17ad9e19.js" defer></script><script src="/mydiary/assets/js/17.bfdb4fda.js" defer></script>
+  </body>
+</html>

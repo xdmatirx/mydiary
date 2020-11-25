@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>1作用域 | 超级爱吨吨</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    
+    <meta name="description" content="muamua">
+    <link rel="preload" href="/mydiary/assets/css/0.styles.fb3ba93f.css" as="style"><link rel="preload" href="/mydiary/assets/js/app.810fe47c.js" as="script"><link rel="preload" href="/mydiary/assets/js/2.17ad9e19.js" as="script"><link rel="preload" href="/mydiary/assets/js/19.4ad98f57.js" as="script"><link rel="prefetch" href="/mydiary/assets/js/10.fd1b8081.js"><link rel="prefetch" href="/mydiary/assets/js/11.05f3a654.js"><link rel="prefetch" href="/mydiary/assets/js/12.c915a22e.js"><link rel="prefetch" href="/mydiary/assets/js/13.3f80967e.js"><link rel="prefetch" href="/mydiary/assets/js/14.e6ff2188.js"><link rel="prefetch" href="/mydiary/assets/js/15.889a4032.js"><link rel="prefetch" href="/mydiary/assets/js/16.b651bfae.js"><link rel="prefetch" href="/mydiary/assets/js/17.bfdb4fda.js"><link rel="prefetch" href="/mydiary/assets/js/18.bae4c4b7.js"><link rel="prefetch" href="/mydiary/assets/js/20.843b3589.js"><link rel="prefetch" href="/mydiary/assets/js/21.32568880.js"><link rel="prefetch" href="/mydiary/assets/js/22.2f37cb98.js"><link rel="prefetch" href="/mydiary/assets/js/23.21039632.js"><link rel="prefetch" href="/mydiary/assets/js/24.3733b365.js"><link rel="prefetch" href="/mydiary/assets/js/3.19cd2de2.js"><link rel="prefetch" href="/mydiary/assets/js/4.f78f7964.js"><link rel="prefetch" href="/mydiary/assets/js/5.03de1341.js"><link rel="prefetch" href="/mydiary/assets/js/6.a53167be.js"><link rel="prefetch" href="/mydiary/assets/js/7.e8d49dd5.js"><link rel="prefetch" href="/mydiary/assets/js/8.dcc16878.js"><link rel="prefetch" href="/mydiary/assets/js/9.c6337287.js">
+    <link rel="stylesheet" href="/mydiary/assets/css/0.styles.fb3ba93f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/mydiary/" class="home-link router-link-active"><!----> <span class="site-name">超级爱吨吨</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/mydiary/css/css_chapter.html" class="nav-link">
+  HOME
+</a></div><div class="nav-item"><a href="https://xdmatirx.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/mydiary/css/css_chapter.html" class="nav-link">
+  HOME
+</a></div><div class="nav-item"><a href="https://xdmatirx.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Diary</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Mycss</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Notknow Js</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/mydiary/notknowJs/ES6.html" class="sidebar-link">ES6新增的变量 let const</a></li><li><a href="/mydiary/notknowJs/ES6-4.html" class="sidebar-link">字符串扩展</a></li><li><a href="/mydiary/notknowJs/class.html" class="sidebar-link">class</a></li><li><a href="/mydiary/notknowJs/notknowjs.html" aria-current="page" class="active sidebar-link">1作用域</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/mydiary/notknowJs/notknowjs.html#_3-对象" class="sidebar-link">3 对象</a></li><li class="sidebar-sub-header"><a href="/mydiary/notknowJs/notknowjs.html#类" class="sidebar-link">类</a></li></ul></li><li><a href="/mydiary/notknowJs/面向委托prototype设计.html" class="sidebar-link">prototype 委托设计模式</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Second Js</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_1作用域"><a href="#_1作用域" class="header-anchor">#</a> 1作用域</h1> <p>js也是编译语言，但不是提前编译的，而是到运行时前才编译。
+编译通常分为3个步骤：</p> <ol><li>tokenizing/lexing 分词/语法分析</li> <li>Parsing 解析/语法分析 将词法单元转换成一个由元素逐级嵌套而成的程序语法结构树（AST）。</li> <li>代码生成 将AST转换成可执行的代码</li></ol> <p>作用域定义：严格规范了所有声明的标志符（变量），在当前作用域下，代码对他们的访问权限。</p> <p>var a = 2
+当进行RHS查询（即查询谁是该赋值操作的源头；获取目标变量的值）时，但对该值进行了不合理的操作，是会抛出TypeError的。</p> <p>当进行LHS查询（查询该变量容器本身，用于被赋值；获取目标变量）；
+如果未声明过该变量，是会抛出ReferenceError的</p> <p>ReferenceError通常是和作用域判别错误相关，typeError则是作用域判断对了，但对其操作不合法。</p> <p>严格模式下，禁止自动或者隐式的创建变量
+// use strict</p> <h1 id="_2词法作用域"><a href="#_2词法作用域" class="header-anchor">#</a> 2词法作用域</h1> <p>词法作用域意味着 作用域 是由书写代码的时候，有函数声明的位置来决定的。
+编译词法分析阶段基本就可以知道全部标识符在哪里，以及在哪里声明，
+从而判断在执行的过程中如何对他们进行查找。</p> <h1 id="_3-函数作用域和块作用域"><a href="#_3-函数作用域和块作用域" class="header-anchor">#</a> 3 函数作用域和块作用域</h1> <p>js是具有基于函数的作用域的。
+通过函数包裹，可以隐藏某些变量。
+利用let 可以显式的声明变量</p> <h1 id="_4-任何声明在某个作用域内的变量，都附属于这个作用域。"><a href="#_4-任何声明在某个作用域内的变量，都附属于这个作用域。" class="header-anchor">#</a> 4 任何声明在某个作用域内的变量，都附属于这个作用域。</h1> <p>变量的声明是会被提升的，赋值则保持在原先的位置不变。
+然后函数和变量相比 函数首先被提升。</p> <h1 id="_5-作用域-闭包"><a href="#_5-作用域-闭包" class="header-anchor">#</a> 5 作用域 闭包</h1> <p>通过一定手段，将内部函数传递到其所在词法作用域以外，它都是会持有原先定义作用域的引用。
+因此，无论在何处执行该函数，都会使用这个闭包。</p> <p>js的模块 module通过暴露自己内部的一些方法，实现闭包。
+-1 模块模式必须要有外部的封闭函数，该函数必须至少要被调用一次。
+因为没调用一次就会创建一个新的模块实例
+-2 封闭的这个函数必须至少返回一个内部的函数，这样该返回的内部函数就可以在别的作用域里形成闭包，
+通过该函数实现访问或者修改闭包内变量。</p> <p>另外 一个具有函数属性的对象  object 并不算是闭包。</p> <p>import 可以把模块中的API导入到当前作用域中。并分别绑定到一个变量上。
+export 会将当前模块的一个标志符导出为公共api
+module会将整个模块的api导入并绑定到一个变量上。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// bar.js</span>
+<span class="token keyword">function</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> hello
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// foo.js</span>
+<span class="token keyword">import</span> hello <span class="token keyword">from</span> <span class="token string">'bar'</span>
+
+<span class="token keyword">var</span> myhungry <span class="token operator">=</span> <span class="token string">'hippo'</span>
+<span class="token keyword">function</span> <span class="token function">awsome</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'ye'</span><span class="token punctuation">)</span>
+  <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> awsome
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>module foo <span class="token keyword">from</span> <span class="token string">'foo'</span>
+module bar <span class="token keyword">from</span> <span class="token string">'bar'</span>
+
+bar<span class="token punctuation">.</span><span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+foo<span class="token punctuation">.</span><span class="token function">awsome</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>当函数可以记住并访问所在的词法作用域，即使在当前作用域之外执行，
+也是可以的，这样也就产生了闭包。</p> <p>js具有词法作用域 不具有动态作用域。
+词法作用域的特征是 变量定义过程是发生在代码书写阶段，而非动态的。</p> <p>动态则是关系函数在何处调用，所以无法直接确定。</p> <p>剪头函数 =&gt; 遇上this的时候，和普通函数行为不一样。
+它放弃了普通this的绑定规则，用当时写代码处的词法作用域覆盖了this本来的值。</p> <p>遇到问题不要回避，去试图解决。</p> <p>this是在运行的时候绑定的，不在编写时绑定，它的上下文环境
+就取决于调用时候的环境和条件了。
+this的绑定和函数声明的位置没什么关系，只取决于函数的调用方式。</p> <p>比如说，函数被调用的时候，会创建一个类似的调用记录。
+包含了该函数在哪里被调用（调用栈），函数的调用方法啊，传入的各种参数等。
+重点在于函数的调用方式、调用时候的位置（也叫调用方法）。从而来判断。</p> <p>重点也就变成了分析调用栈，即为了达到当前执行位置所调用的所有函数。
+这个调用位置就是 当前正在执行的函数的 <strong>前一个</strong> 调用中。</p> <p>调用栈就像一个函数调用链。</p> <p>接下来是this的绑定规则：</p> <ul><li>1 默认绑定
+这种情况就是指向全局作用域</li> <li>2 隐藏式绑定
+需要考虑调用的具体位置处是否有context上下文，是否被某个对象拥有或者包含。
+调用时候具体指向。
+同样，隐藏式的绑定存在丢失现象，会应用默认绑定情况。
+比如回调函数</li> <li>3 显示绑定
+强制在某个对象上调用函数，
+比如 call apply。
+但</li> <li>4 new方式绑定
+首先是new调用所会执行的操作
+//
+1 创建一个空对象
+2 该空对象会被执行 原型 的连接
+3 这个空对象会绑定到函数调用的this
+4 如果函数没有返回其他对象，new表达式中的函数调用会自动返回这个新对象。<div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 1 创建一个空对象</span>
+<span class="token keyword">let</span> args <span class="token operator">=</span> <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+obj<span class="token punctuation">.</span>__proto__ <span class="token operator">=</span> <span class="token class-name">Foo</span><span class="token punctuation">.</span>prototype
+<span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token function">Foo</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> args<span class="token punctuation">)</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> res
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> obj
+<span class="token punctuation">}</span>
+</code></pre></div></li></ul> <p>this绑定优先级
+new，指向新创建的对象。
+显示绑定 call apply，只想传入的对象
+隐式绑定 如果是否在某个上下文里被对象调用了
+都不是，则是默认绑定</p> <p>还有一种忽略的情况，即把null undefined作为this传入call apply 或者bind，
+这时候调用会忽略掉。应用了默认的绑定规则。
+有可能出现问题，就是在第三方库里。</p> <p>所以建议传入一个 Object.create(null)对象，这个对象比{}还要空，
+他没有Object.prototype这个委托。</p> <p>但是箭头函数不一样，不使用这些规则
+它的this直接就是指向所写代码外层的作用域，new也不能修改。</p> <p>最常用在回调函数里，比如事件处理器，定时器。</p> <p>总结就是：
+找某个运行函数内this的指向时，需要先找到该函数的直接调用位置（作用域），
+找到了后应用 this的四种规则判断 this的绑定对象。
+但箭头函数例外，有静态代码的外层函数决定了。</p> <h2 id="_3-对象"><a href="#_3-对象" class="header-anchor">#</a> 3 对象</h2> <p>函数调用位置不同，this绑定的对象不同，对象的含义是？</p> <p>函数并不会属于某个对象，只是在对象内部对函数进行了引用，调用。</p> <p>深 浅复制概念：</p> <p>深复制方法：</p> <ol><li><p>JSON.stringfy 将对象转换为 json 格式的字符串
+JSON.parse是 将json 字符串转换为 对象的
+json格式的字符串
+{‘a’: 5, '}</p> <ol><li>let fun = JSON.parse(JSON.stringfy(obj))</li></ol></li> <li><p>ES6还有Object.assign()实现浅复制
+利用的就是 = 这个符号</p></li></ol> <div class="language-js extra-class"><pre class="language-js"><code>obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+a<span class="token operator">:</span> <span class="token number">2</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> obj2 <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> obj<span class="token punctuation">)</span>
+
+obj2<span class="token punctuation">.</span>a <span class="token operator">===</span> obj<span class="token punctuation">.</span>a
+<span class="token comment">// true</span>
+</code></pre></div><p>ES6 有属性描述负查看</p> <div class="language-js extra-class"><pre class="language-js"><code>Object<span class="token punctuation">.</span><span class="token function">getOwnPropertyDescriptor</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// {</span>
+<span class="token comment">// value: 2,</span>
+<span class="token comment">// writable: true,</span>
+<span class="token comment">// enumerable: true,</span>
+<span class="token comment">// configurable: true</span>
+<span class="token comment">// }</span>
+
+<span class="token keyword">let</span> myObj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>myObj<span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  value<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+  writable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  configurable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  enumberable<span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myObj<span class="token punctuation">.</span>a<span class="token punctuation">)</span>
+<span class="token comment">// 10</span>
+一般也不会这样去修改描述符
+</code></pre></div><p>writable用来控制是否可更改
+configurable用来控制是否可配置
+enumberable查看是否可以枚举 出现在for in循环中</p> <p>是否可枚举，可以用</p> <p>in操作符可以检测属性是否在对象及其prototype原型链中，包括不可枚举的。
+然后 hasOwnProperty只会检测是否在 对象 上，不会检测到原型链上。
+Object.prototype.hasOwnProperty.call(obj, 'a')来检查是毕竟稳妥的。
+注意 这里检测的都是key</p> <p>for in 会遍历对象和原型链上所有可枚举的属性</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  enumberable<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  value<span class="token operator">:</span> <span class="token number">3</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  enumberable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  value<span class="token operator">:</span> <span class="token number">2</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+obj<span class="token punctuation">.</span><span class="token function">propertyIsEnumberable</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span> <span class="token comment">// true</span>
+
+Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token comment">// ['a']  获取所有键，包含所有可枚举的属性</span>
+Object<span class="token punctuation">.</span><span class="token function">getOwnPropertyNames</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token comment">// ['a','b'] 获取所有键，包括不可枚举的</span>
+
+</code></pre></div><p>现在有 forEach, some, every 可以遍历数组</p> <h2 id="类"><a href="#类" class="header-anchor">#</a> 类</h2> <p>多态 继承</p> <p>构造函数：初始化实例时 会提供所需要的信息。
+通过 Object.create() 可给两对象建立关联
+let m = Object.create({})
+将m的 prototype 指向一个空对象</p> <hr> <p>利用</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>Object<span class="token punctuation">.</span><span class="token function">getPrototypeOf</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token class-name">Foo</span><span class="token punctuation">.</span>prototype <span class="token comment">// true</span>
+<span class="token comment">// 可以查看a对象的原型对象</span>
+</code></pre></div><p>实例对象的constructor实际也是调用的 原型对象上的constructor属性
+即</p> <div class="language-js extra-class"><pre class="language-js"><code>a<span class="token punctuation">.</span>constructor <span class="token operator">===</span> <span class="token class-name">Foo</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor
+</code></pre></div><p>如果要修改对象的原型对象，建议使用以下方式</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token class-name">Bar</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">Foo</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span>
+
+<span class="token comment">// ES6</span>
+Object<span class="token punctuation">.</span><span class="token function">setPrototypeOf</span><span class="token punctuation">(</span><span class="token class-name">Bar</span><span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> <span class="token class-name">Foo</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span>
+</code></pre></div><p>判断对象之间是否存在关联
+用 instanceof并不是十分准确
+尽可能使用
+Object.getPrototypeOf(Bar)
+Foo.prototype.isPrototypeOf()</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">myInstanceof</span><span class="token punctuation">(</span><span class="token parameter">left<span class="token punctuation">,</span> right</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> source <span class="token operator">=</span> right<span class="token punctuation">.</span>prototype
+  <span class="token keyword">let</span> target <span class="token operator">=</span> left<span class="token punctuation">.</span>__proto__
+  <span class="token comment">// 一直查找</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>target <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>target <span class="token operator">===</span> source<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+    target <span class="token operator">=</span> target<span class="token punctuation">.</span>__proto__
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><p>建议</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token class-name">Foo</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">isPrototypeOf</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> 
+<span class="token comment">// 含义就是在a的整条prototype链中，有无出现过Foo.prototype</span>
+</code></pre></div><p>其次是</p> <div class="language-js extra-class"><pre class="language-js"><code>Object<span class="token punctuation">.</span><span class="token function">getPrototypeOf</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token class-name">Foo</span><span class="token punctuation">.</span>prototype <span class="token comment">// true</span>
+
+a<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> <span class="token class-name">Foo</span><span class="token punctuation">.</span>prototype <span class="token comment">// 但不是所有浏览器都支持</span>
+
+<span class="token punctuation">.</span>__proto__
+<span class="token comment">// 类似于下面这个</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span>Prototype<span class="token punctuation">,</span> <span class="token string">'__proto__'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+      <span class="token keyword">return</span> <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">getPrototypeOf</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>  
+ <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">set</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">o</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+      Object<span class="token punctuation">.</span><span class="token function">setPrototypeOf</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> o<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> o
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="对象关联"><a href="#对象关联" class="header-anchor">#</a> 对象关联</h3> <p>prototype机制存在与对象之间，能够引用其他对象。作用通常就是，在该对象上没找到的属性或者方法，
+会沿着Prototype链关联上的对象接着查找。
+这一系列对象成为原型链。</p> <p>Object.create(null) 会 创 建 一 个 拥 有 空（ 或 者 说 null ） [[Prototype]] 链接的对象， 这个对象无法进行委托。 由于这个对象没有原型链， 所以 instanceof 操作符（之前解释过）无法进行判断， 因此总是会返回 false 。 这些特殊的空 [[Prototype]] 对象通常被称作“字典”，它们完全不会受到原 型链的干扰，因此非常适合用来存储数据。</p> <p>这里建议如果使用 for in循环找对象身上的属性
+一定要结合 hasOwnProperty,这样遍历出来的属性是一定是 对象 身上且可枚举的属性。</p> <p>小总结：如果要访问的对象中并不存在一个属性，[[get]]会通过对象内部的prototype链查找上去，直到找到或者结束。</p> <p>将两个对象关联起来的最常用方法就是用 new 关键词</p> <p>js 的 继承更适合用委托这个术语。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">11/15/2020, 7:55:49 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/mydiary/notknowJs/class.html" class="prev">
+        class
+      </a></span> <span class="next"><a href="/mydiary/notknowJs/面向委托prototype设计.html">
+        prototype 委托设计模式
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/mydiary/assets/js/app.810fe47c.js" defer></script><script src="/mydiary/assets/js/2.17ad9e19.js" defer></script><script src="/mydiary/assets/js/19.4ad98f57.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>流的破坏和保护 | 超级爱吨吨</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    
+    <meta name="description" content="muamua">
+    <link rel="preload" href="/mydiary/assets/css/0.styles.fb3ba93f.css" as="style"><link rel="preload" href="/mydiary/assets/js/app.810fe47c.js" as="script"><link rel="preload" href="/mydiary/assets/js/2.17ad9e19.js" as="script"><link rel="preload" href="/mydiary/assets/js/12.c915a22e.js" as="script"><link rel="prefetch" href="/mydiary/assets/js/10.fd1b8081.js"><link rel="prefetch" href="/mydiary/assets/js/11.05f3a654.js"><link rel="prefetch" href="/mydiary/assets/js/13.3f80967e.js"><link rel="prefetch" href="/mydiary/assets/js/14.e6ff2188.js"><link rel="prefetch" href="/mydiary/assets/js/15.889a4032.js"><link rel="prefetch" href="/mydiary/assets/js/16.b651bfae.js"><link rel="prefetch" href="/mydiary/assets/js/17.bfdb4fda.js"><link rel="prefetch" href="/mydiary/assets/js/18.bae4c4b7.js"><link rel="prefetch" href="/mydiary/assets/js/19.4ad98f57.js"><link rel="prefetch" href="/mydiary/assets/js/20.843b3589.js"><link rel="prefetch" href="/mydiary/assets/js/21.32568880.js"><link rel="prefetch" href="/mydiary/assets/js/22.2f37cb98.js"><link rel="prefetch" href="/mydiary/assets/js/23.21039632.js"><link rel="prefetch" href="/mydiary/assets/js/24.3733b365.js"><link rel="prefetch" href="/mydiary/assets/js/3.19cd2de2.js"><link rel="prefetch" href="/mydiary/assets/js/4.f78f7964.js"><link rel="prefetch" href="/mydiary/assets/js/5.03de1341.js"><link rel="prefetch" href="/mydiary/assets/js/6.a53167be.js"><link rel="prefetch" href="/mydiary/assets/js/7.e8d49dd5.js"><link rel="prefetch" href="/mydiary/assets/js/8.dcc16878.js"><link rel="prefetch" href="/mydiary/assets/js/9.c6337287.js">
+    <link rel="stylesheet" href="/mydiary/assets/css/0.styles.fb3ba93f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/mydiary/" class="home-link router-link-active"><!----> <span class="site-name">超级爱吨吨</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/mydiary/css/css_chapter.html" class="nav-link">
+  HOME
+</a></div><div class="nav-item"><a href="https://xdmatirx.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/mydiary/css/css_chapter.html" class="nav-link">
+  HOME
+</a></div><div class="nav-item"><a href="https://xdmatirx.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Diary</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Mycss</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/mydiary/mycss/chapter4.html" class="sidebar-link">4种盒尺寸</a></li><li><a href="/mydiary/mycss/chapter5.html" class="sidebar-link">/mycss/chapter5.html</a></li><li><a href="/mydiary/mycss/chapter6.html" aria-current="page" class="active sidebar-link">流的破坏和保护</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/mydiary/mycss/chapter6.html#_6-5-1先跳过" class="sidebar-link">!6.5.1先跳过</a></li></ul></li><li><a href="/mydiary/mycss/chapter7.html" class="sidebar-link">css层叠</a></li><li><a href="/mydiary/mycss/chapter8.html" class="sidebar-link">文本处理能力</a></li><li><a href="/mydiary/mycss/css.html" class="sidebar-link">css_chapter3</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Notknow Js</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Second Js</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="流的破坏和保护"><a href="#流的破坏和保护" class="header-anchor">#</a> 流的破坏和保护</h1> <p>[TOC]</p> <h3 id="float"><a href="#float" class="header-anchor">#</a> float</h3> <p>浮动的本质是为了实现文字环绕的效果。</p> <p>float有以下一些属性需要注意：</p> <ul><li>包裹性</li> <li>块状化并格式化上下文</li> <li>破坏文档流</li> <li>没有任何的margin合并</li></ul> <h4 id="包裹性"><a href="#包裹性" class="header-anchor">#</a> 包裹性</h4> <p>如果浮动元素的子元素小于浮动元素的父容器宽度，
+那浮动元素就是子元素的宽度，呈现包裹性。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.father</span><span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.float</span><span class="token punctuation">{</span>
+    <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token selector">;
+    img</span><span class="token punctuation">{</span>
+      <span class="token property">width</span><span class="token punctuation">:</span> 128px<span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>father<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>float<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span><span class="token punctuation">&quot;</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span> 
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ul><li>自适应性
+如果里面不知一张图片，还有文字，那么浮动元素会自适应父元素的200px</li></ul> <p>另外，浮动会让元素块状化</p> <p>另外text-align对块状化元素是无效的。</p> <p>行框盒子和浮动元素不可重叠性。如果行框盒子和浮动元素垂直高度又重叠，
+则行框盒子再正常定位下智慧跟随浮动元素，不会重叠。</p> <p>浮动的参考有两个，一是“浮动锚点float anchor“ 二是”浮动参考float reference”
+anchor指的是float元素所在流中的一个点，点本身不浮动，像是一个没有margin padding border的空内联元素</p> <p>reference指的是浮动元素相对齐参考的实体。</p> <p>但float可以通过clear清除</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">clear</span><span class="token punctuation">:</span> none | left | right | both
+</code></pre></div><p>是通过设置clear属性的元素自身如何如何，而不是让float元素怎样。
+基本就是clear: both 或 none
+clear属性是让自身不能与前面的浮动元素相邻，但对该元素后面的不管。</p> <p>clear属性只有块级元素才有， ::after伪元素默认是内联的，故通常通过这种方式清除浮动。</p> <p>clear:both本质是让自己不和float元素一行，并不是特别完美的方式。</p> <p>建议BFC block formatting context</p> <p>块级格式化上下文</p> <p>BFC内部元素怎么折腾都不会影响到外部。BFC元素是不会发生margin合并 的。
+BFC可以清除浮动，因为加入子元素浮动了，到种子父元素高度塌陷，那就会影响到外部。</p> <p>触发条件：
+1. html根元素
+2. float不是none 的值
+3. overflow 为auto，scroll，hidden。
+4. display为table-cell，table-caption，或者inline-block。
+5. position不是relative或static。</p> <p>实际上BFC用途不是去margin或者清除float，而是实现自适应布局。
+bfc容错性强，自适应的内容会自动填充满浮动以外的区域。
+适合两栏布局。</p> <div class="language-html extra-class"><pre class="language-html"><code>.bfc{
+  width: 300px
+}
+.left{
+  float: left;
+  margin-right: 10px;
+  border-right: 10px solid transparent;
+  padding-right: 10px
+}
+.right{
+  overflow: hidden;
+  border-left: 10px solid transparent;
+  padding-left: 10px;
+<span class="token comment">&lt;!--  margin-left: 130px  不举荐，因为这个值需要浮动元素的宽度加上我们想要的间隙值，每次改都要计算--&gt;</span>
+}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>bfc<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>left<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>right<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>文字。。。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>理论上bfc元素和float元素相遇就可以自动填充成自适应布局。</p> <p>但不是上述的属性都适合改元素为bfc的，建议如下</p> <ul><li>overflow: auto/hidden ie7 and so on</li> <li>display: inline-block ie6 and ie7</li> <li>display: table-cell ie8 and so on</li></ul> <p>举荐overflow:hidden，因为最大程度不会影响其他元素的宽度。
+只是会可能剪裁掉部分内容。</p> <p>剪裁的是border-box的内边缘。</p> <p>这里有个额外的内容，就是设置overflow hidden了，
+容器垂直方向可滚动，chrome下的padding-bottom会计算在内，
+firefox和ie不会，所以应当注意避免padding-bottom</p> <p>ie8之后多了 <strong>overflow-x</strong> 和 <strong>overflow-y</strong>，用于控制水平和垂直方向上的剪裁规则。</p> <p>属性和overflow一样。
+visible： 默认
+hidden：剪裁
+scroll：滚动区域一直在
+auto：不足以滚动时没有滚动条，可以滚动就出现。</p> <p>永远不可能实现一个方向溢出剪裁或滚动，另一方向内容溢出显示的效果。
+scroll、auto 和 hidden 这 3 个属性值是可以共存的。</p> <p>pc端，无论什么浏览器，默认滚动条均来自html标签，而非body；
+chrome去除默认滚动条，并禁止滚动。但在移动端不适用。</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">html</span> <span class="token punctuation">{</span> 
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+</code></pre></div><p>隐藏滚动条，可以滚动.</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">html</span> <span class="token punctuation">{</span>
+  <span class="token comment">/*隐藏滚动条，当IE下溢出，仍然可以滚动*/</span>
+  <span class="token property">-ms-overflow-style</span><span class="token punctuation">:</span>none<span class="token punctuation">;</span>
+  <span class="token comment">/*火狐下隐藏滚动条*/</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span>-moz-scrollbars-none<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token comment">/*Chrome下隐藏滚动条，溢出可以透明滚动*/</span>
+<span class="token selector">html::-webkit-scrollbar</span><span class="token punctuation">{</span><span class="token property">width</span><span class="token punctuation">:</span>0px<span class="token punctuation">}</span>
+</code></pre></div><p>文字过多显示省略号</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.ell</span> <span class="token punctuation">{</span>
+ <span class="token property">text-overflow</span><span class="token punctuation">:</span> ellipsis<span class="token punctuation">;</span>
+ <span class="token property">white-space</span><span class="token punctuation">:</span> nowrap<span class="token punctuation">;</span>
+ <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+</code></pre></div><p>还有最多显示两行的</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.ell-rows-2</span> <span class="token punctuation">{</span>
+ <span class="token property">display</span><span class="token punctuation">:</span> -webkit-box<span class="token punctuation">;</span>
+<span class="token property">-webkit-box-orient</span><span class="token punctuation">:</span> vertical<span class="token punctuation">;</span>
+<span class="token property">-webkit-line-clamp</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+</code></pre></div><p>overflow与锚点</p> <p>可以借助锚点实现定位，方式有两种：</p> <ul><li><a>标签以及name属性</a></li> <li>使用标签的id属性</li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>#1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>定位的本质原理就是改变 <strong>容器</strong> 滚动高度或者宽度。
+是container 容器的滚动高度。
+但单页面应用spa
+本身#是作为锚点的，如果路由已占用了，那么会冲突。</p> <p>建议使用id会更加干净一点
+锚点定位的触发条件：
+1.URL地址种的锚链与锚点对应  且  有交互行为
+2.可focus的锚点元素处于focus状态</p> <p>但第一种是会让元素定位到浏览器窗体的上边缘，
+第二种事让focus元素出现在浏览器可视范围内。</p> <p>本质就是让容器的滚动条滚动一定距离</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>  document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.container'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>scrollTop <span class="token operator">=</span> <span class="token number">400</span>
+  <span class="token comment">// 让容器滚动一定距离即可，可以很大的一值</span>
+</code></pre></div><p>然后结合overflow: hidden可以隐藏滚动条,实现一直切换显示的效果；
+比如轮播图结合focus，可以用input框，:checked伪类，单选按钮，label标签实现切换。</p> <div class="language-css extra-class"><pre class="language-css"><code>  <span class="token selector">.containerid</span><span class="token punctuation">{</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 120px<span class="token punctuation">;</span>
+    <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.box</span><span class="token punctuation">{</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><div class="language-html extra-class"><pre class="language-html"><code>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>containerid<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>box<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>s<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>zzzzz<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>#1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>mmmmm<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>float的兄弟position: absolute
+absolute存在的时候float无效。
+都能块状化，包裹性，破坏性。</p> <h2 id="_6-5-1先跳过"><a href="#_6-5-1先跳过" class="header-anchor">#</a> !6.5.1先跳过</h2> <h4 id="absolute绝对定位"><a href="#absolute绝对定位" class="header-anchor">#</a> absolute绝对定位</h4> <p>absolute是非常独立的css属性，不依赖其他样式、属性可以完成</p> <p>利用position absolute完成了很多定位效果，但比较适合静态的页面；
+如果是二级菜单的定位显示的或者其他动态的，还是用js比较好。</p> <p>无论是内联元素还是块状元素，使用position: absolute前位置在哪里，使用后仍在同一位置。</p> <p>但是浮动和绝对定位遇上时，有一些奇怪的问题。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">&gt;</span></span>全兼容版本<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>compa<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>1.jpg<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">p</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> 120px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> #eef0f6<span class="token punctuation">;</span>
+    <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">img</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* IE兼容处理 */</span>
+<span class="token selector">.compa</span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> .1px<span class="token punctuation">;</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token function">-webkit-calc</span><span class="token punctuation">(</span>1px - 1px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.compa:before</span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">&quot;\2002&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>可以实现图片前面的空白幽灵节点的居中，再给一个margin-left一半图片宽度负值大小即可图片居中。</p> <p>如果
+overflow 不是定位元素，同时绝对定位元素和 overflow 容器之间也没有定位元素，则
+overflow 无法对 absolute 元素进行剪裁。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>1.jpg<span class="token punctuation">&quot;</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+//overflow 元素父级是定位元素也不会剪裁，例如：
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>1.jpg<span class="token punctuation">&quot;</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span> 
+</code></pre></div><p>但是，如果 overflow 属性所在的元素同时也是定位元素，里面的绝对定位元素会被剪裁：
+</p><div style="overflow:hidden;position:relative;"><img src="1.jpg" style="position:absolute;"></div>
+如果 overflow 元素和绝对定位元素之间有定位元素，也会被剪裁：
+<div style="overflow:hidden;"><div style="position:relative;"><img src="1.jpg" style="position:absolute;"></div></div>
+如果 overflow 的属性值不是 hidden 而是 auto 或者 scroll，即使绝对定位元素高宽
+比 overflow 元素高宽还要大，也都不会出现滚动条。例如，下面的 HTML 和 CSS 代码：<p></p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>box<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+ 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>1.jpg<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.box</span> <span class="token punctuation">{</span>
+ <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+ <span class="token property">background-color</span><span class="token punctuation">:</span> #f0f3f9<span class="token punctuation">;</span>
+ <span class="token property">overflow</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.box &gt; img</span> <span class="token punctuation">{</span>
+ <span class="token property">width</span><span class="token punctuation">:</span> 256px<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> 192px<span class="token punctuation">;</span>
+ <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+</code></pre></div><p>图片高度 256px 比容器.box 高度 100px 明显高出了一截，但是，没有滚动条出现。
+实际开发的时候，绝对定位元素和非绝对定位元素往往可能混杂在一起，虽然绝对定位元
+素不能让滚动条出现，但是非绝对定位元素可以，于是，就可能出现另外一种很有特色的现象，</p> <h3 id="clip属性，但想要起作用，需要元素得是绝对定位或者固定定位"><a href="#clip属性，但想要起作用，需要元素得是绝对定位或者固定定位" class="header-anchor">#</a> clip属性，但想要起作用，需要元素得是绝对定位或者固定定位</h3> <p>即position为absolute或则fixed</p> <p>clip: rect(top, right, bottom, left)
+clip通常使用在以下两种情景：</p> <ol><li>对于普通元素或者absolute定位的元素，利用overflow的元素可以裁剪；
+但对于fixed的 overflow无效，因为fixed固定定位元素的包含块是根元素。</li></ol> <p>最佳可访问性隐藏
+给需要隐藏但有希望给搜索的元素添加该属性即可
+利于seo</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.clip</span> <span class="token punctuation">{</span>
+ <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+ <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span>0 0 0 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+</code></pre></div><p>添加该属性就可以实现隐藏性的访问。
+clip与其他隐藏属性的对比:</p> <ol><li><p>display: none / visibiliy: hidden的方式下，其中按钮无法被focus，
+其次是IE8下提交行为会丢失</p></li> <li><p>透明度为0去覆盖也是可以的，移动端项目建议这样，但pc端不建议，因为可能需要各自计算具体覆盖的位置。</p></li> <li><p>还有一种隐藏式访问</p></li></ol> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.abs-out</span><span class="token punctuation">{</span>
+<span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+<span class="token property">left</span><span class="token punctuation">:</span> -999px<span class="token punctuation">;</span>
+<span class="token property">top</span><span class="token punctuation">:</span> -999px<span class="token punctuation">}</span>
+</code></pre></div><p>这样看了，pc适合clip，移动适合transparent为0来覆盖。</p> <p>总结： clip隐藏就仅仅决定了哪部分可见，非可见的部分是无法响应点击事件的；
+其次，虽然视觉上隐藏了，但元素的尺寸依然还是保留原本的样子</p> <p>浮动与绝对定位有一定的冲突，尤其时无依赖的绝对定位和浮动遇上的话。会出现浏览器之前的小问题</p> <p>absolute &amp;&amp; text-align</p> <p>本身text-align是不会影响absolute或者float后的元素的，因为设置absolute或者float后，元素会块状化 ,但内联元素前面存在一个空白幽灵节点，他会居中，导致图片就会偏后，所以得利用margin-left负一半图片宽回去。</p> <p>以下是全兼容版本。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>compa<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>1.png<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">p</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> 120px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> #eef0f6<span class="token punctuation">;</span>
+    <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">img</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* IE兼容处理 */</span>
+<span class="token selector">.compa</span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> .1px<span class="token punctuation">;</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token function">-webkit-calc</span><span class="token punctuation">(</span>1px - 1px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.compa:before</span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">&quot;\2002&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>只有当absolute遇上left/top/right bottom才变成了真正的绝对定位元素。
+此时absolute的元素丢失原本相对特性，会相对于定位元素进行left top方位的对齐。</p> <p>绝对定位居中</p> <div class="language-css extra-class"><pre class="language-css"><code>  <span class="token selector">.element</span><span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token property">margin-left</span><span class="token punctuation">:</span> -150px<span class="token punctuation">;</span> <span class="token comment">/* 这里是宽高的一半 */</span>
+    <span class="token property">margin-top</span><span class="token punctuation">:</span> -100px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><p>第二种，但这个方法可能导致ios微信闪退</p> <div class="language-css extra-class"><pre class="language-css"><code>  <span class="token selector">.element</span><span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-50%<span class="token punctuation">,</span> -50%<span class="token punctuation">)</span> <span class="token comment">/* 即自身的尺寸一半 */</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><p>首推呢，还是下面的</p> <div class="language-css extra-class"><pre class="language-css"><code>  <span class="token selector">.element</span><span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><h3 id="接着是relative对absolute的限制"><a href="#接着是relative对absolute的限制" class="header-anchor">#</a> 接着是relative对absolute的限制</h3> <p>relative有两大特性</p> <ol><li>相对自身原始的位置进行位移（具体的数值时）</li> <li>无侵入，意思是进行定位偏移的时候，是不会影响周围元素的。
+当使用百分比进行偏移时，是相对于器包含块的。</li></ol> <p>如果父级的高度不是格式化的高度，那么relative的百分比高度等同于 0</p> <ol><li>尽量不适应relative偏移定位，如果需要，可以考虑试试无依赖的绝对定位</li> <li>如果场景受限，必须使用relative，就尽量少影响剩余的布局。</li></ol> <h3 id="fixed定位"><a href="#fixed定位" class="header-anchor">#</a> fixed定位</h3> <p>fixed的包含块是根元素，可以理解为</p><html><p></p></html></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">10/18/2020, 7:32:32 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/mydiary/mycss/chapter5.html" class="prev">
+        /mycss/chapter5.html
+      </a></span> <span class="next"><a href="/mydiary/mycss/chapter7.html">
+        css层叠
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/mydiary/assets/js/app.810fe47c.js" defer></script><script src="/mydiary/assets/js/2.17ad9e19.js" defer></script><script src="/mydiary/assets/js/12.c915a22e.js" defer></script>
+  </body>
+</html>
